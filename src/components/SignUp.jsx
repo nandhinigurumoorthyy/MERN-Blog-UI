@@ -16,7 +16,7 @@ function SignUp() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:10000/auth/signup", {
+      .post("https://mern-blog-server-t3fr.onrender.com/auth/signup", {
         username,
         email,
         password,

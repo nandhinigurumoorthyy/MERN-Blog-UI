@@ -21,7 +21,7 @@ const Profile = () => {
       setLoading(true);
       try {
         const blogsResponse = await axios.get(
-          "http://localhost:10000/get/user/blogs",
+          "https://mern-blog-server-t3fr.onrender.com/get/user/blogs",
           { params: { email } }
         );
         setBlogs(blogsResponse.data);
@@ -48,7 +48,7 @@ const Profile = () => {
   const handleDeleteBlog = async (blogId) => {
     if (window.confirm("Are you sure you want to delete this blog??🥺")) {
       try {
-        await axios.delete(`http://localhost:10000/delete/blogs/${blogId}`);
+        await axios.delete(`https://mern-blog-server-t3fr.onrender.com/delete/blogs/${blogId}`);
         setBlogs((prev) => prev.filter((blog) => blog._id !== blogId));
         alert("🚮 Blog binned! Onward to brighter stories...");
       } catch (error) {
@@ -69,7 +69,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:10000/put/blogs/${editingBlog._id}`,
+        `https://mern-blog-server-t3fr.onrender.com/put/blogs/${editingBlog._id}`,
         editingBlog
       );
       setBlogs((prev) =>
