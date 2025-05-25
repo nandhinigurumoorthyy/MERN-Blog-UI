@@ -240,7 +240,7 @@ const Blogs = () => {
           onClick={() => {
             setSearchTerm("");
             // Fetch all blogs again
-            fetch("https://mern-blog-server-t3fr.onrender.com/getall/blogs")
+            fetch("https://mern-blog-server-t3fr.onrender.com/get/blogs")
               .then((res) => res.json())
               .then((data) => setBlogs(data));
           }}
