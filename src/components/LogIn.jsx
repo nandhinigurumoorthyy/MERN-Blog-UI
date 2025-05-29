@@ -33,15 +33,14 @@ const LogIn = () => {
               alert("Unexpected server response. Please try again later.");
                 }
             })
-            .catch((error) => {
-                console.error("Error:", error.message);
-                navigate("/error", {
-                    state: {
-                        message: "Login failed! Please check your credentials.",
-                        details: error.response?.data?.message || error.message,
-                    },
-                });
-            });
+             .catch((error) => {
+        console.error("Error:", error.message);
+        alert(
+          `Login failed! Please check your credentials. Details: ${
+            error.response?.data?.message || error.message
+          }`
+        );
+      });
 
     };
 
